@@ -14,6 +14,10 @@ export class Schedule {
 
   courseService = inject(CourseService);
 
+  ngOnInit() {
+    this.loadCourses();
+  }
+
   async loadCourses() {
     try {
       this.courseList.set(await this.courseService.loadCourses());

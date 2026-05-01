@@ -1,1 +1,22 @@
-<p>schedule works!</p>
+@if(error()) {
+    <p>{{ error() }}</p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Kurskod</th>
+            <th>Kursnamn</th>
+            <th>Progression</th>
+        </tr>
+    </thead>
+    <tbody>
+    @for(course of courseList(); track course.code) {
+        <tr>
+            <td><a href="{{ course.syllabus }}">{{ course.code }}</a></td>
+            <td>{{ course.coursename }}</td>
+            <td>{{ course.progression }}</td>
+        </tr>    
+    }
+    </tbody>
+</table>
