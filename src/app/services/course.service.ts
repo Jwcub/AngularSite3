@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { CourseInterface } from '../models/course.interface';
+import { Course } from '../models/course.interface';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -12,8 +12,8 @@ export class CourseService {
     http = inject(HttpClient);
 
     // Ladda in kurser
-    async loadCourses() : Promise<CourseInterface[]> {
-        const courses = this.http.get<CourseInterface[]>(this.url);
+    async loadCourses() : Promise<Course[]> {
+        const courses = this.http.get<Course[]>(this.url);
 
         return await firstValueFrom(courses);
     }
