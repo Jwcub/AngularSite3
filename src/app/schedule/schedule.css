@@ -1,0 +1,9 @@
+.search-area {
+    display: flex;
+    justify-content: center;
+}
+
+.search-area input {
+    width: 50%;
+    max-width: 400px;
+}

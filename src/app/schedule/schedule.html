@@ -2,16 +2,21 @@
     <p>{{ error() }}</p>
 }
 
+<div class="search-area">
+    <label for="#searchQuery">Sök:</label>
+    <input #searchQuery type="text" (input)="onSearchUpdated(searchQuery.value)">
+</div>
+
 <table>
     <thead>
         <tr>
-            <th>Kurskod</th>
-            <th>Kursnamn</th>
-            <th>Progression</th>
+            <th class="course-code" (click)="sortCourseCode()">Kurskod</th>
+            <th (click)="sortCourseName()">Kursnamn</th>
+            <th (click)="sortCourseProgression()">Progression</th>
         </tr>
     </thead>
     <tbody>
-    @for(course of courseList(); track course.code) {
+    @for(course of filteredCourses(); track course.code) {
         <tr>
             <td><a href="{{ course.syllabus }}">{{ course.code }}</a></td>
             <td>{{ course.coursename }}</td>

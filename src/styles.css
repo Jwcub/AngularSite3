@@ -82,6 +82,7 @@ th, td {
 th {
     background-color: #f5f5f5;
     font-weight: 600;
+    cursor: pointer;
 }
 
 tr:nth-child(even) {
@@ -99,6 +100,11 @@ img, picture, video {
 
 input, button, textarea, select {
     font: inherit;
+}
+
+label {
+    font-weight: 600;
+    margin-right: 0.4em;
 }
 
 button {
