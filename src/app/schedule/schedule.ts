@@ -48,21 +48,41 @@ export class Schedule {
   arrow = signal<string>("");
 
   // Sortera kurskod i bokstavsordning
-  sortCourseCode() {
+sortCourseCode() {
+
+  if (this.arrow() === "codeDesc") {
+    this.filteredCourses().sort((a, b) => b.code.localeCompare(a.code));
+    console.log("Ö-A");
+    this.arrow.set("codeAsc");
+  } else {
     this.filteredCourses().sort((a, b) => a.code.localeCompare(b.code));
-    this.arrow.set("code");
+    console.log("A-Ö");
+    this.arrow.set("codeDesc");
   }
+}
 
   // Sortera kurskod i bokstavsordning
   sortCourseName() {
-    this.filteredCourses().sort((a, b) => a.coursename.localeCompare(b.coursename));
-    this.arrow.set("name");
+    if(this.arrow() === "nameDesc") {
+      this.filteredCourses().sort((a, b) => b.coursename.localeCompare(a.coursename));
+      this.arrow.set("nameAsc");
+      console.log("A-Ö")
+    } else {
+      this.filteredCourses().sort((a, b) => a.coursename.localeCompare(b.coursename));
+      this.arrow.set("nameDesc");
+      console.log("Ö-A")
+    }
   }
 
   // Sortera kurskod i bokstavsordning
   sortCourseProgression() {
-    this.filteredCourses().sort((a, b) => a.progression.localeCompare(b.progression));
-    this.arrow.set("progression");
+    if(this.arrow() === "progressionDesc") {
+      this.filteredCourses().sort((a, b) => b.progression.localeCompare(a.progression));
+      this.arrow.set("progressionAsc");
+    } else {
+      this.filteredCourses().sort((a, b) => a.progression.localeCompare(b.progression));
+      this.arrow.set("progressionDesc");
+    }
   }
 }
 
