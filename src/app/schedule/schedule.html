@@ -10,9 +10,9 @@
 <table>
     <thead>
         <tr>
-            <th class="course-code" (click)="sortCourseCode()">Kurskod</th>
-            <th (click)="sortCourseName()">Kursnamn</th>
-            <th (click)="sortCourseProgression()">Progression</th>
+            <th style="width:20%" class="course-code" (click)="sortCourseCode()">Kurskod @if(arrow() === "code") { <span>↓</span>}</th>
+            <th style="width:60%" (click)="sortCourseName()">Kursnamn @if(arrow() === "name") { <span>↓</span>}</th>
+            <th style="width:20%" (click)="sortCourseProgression()">Progression @if(arrow() === "progression") { <span>↓</span>}</th>
         </tr>
     </thead>
     <tbody>
