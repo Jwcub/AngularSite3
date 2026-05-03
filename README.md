@@ -22,7 +22,7 @@ Denna applikation är skapad i kursen Programmering i TypeScript vid MittUnivers
 3. Öppna webbläsaren och gå till:
 `` http://localhost:4200 ``
 
-### Utvecklad av
+**Utvecklad av**
 Kevin Maninnerby
 
-### Tillgänglig vid: 
+**Tillgänglig vid:** 
