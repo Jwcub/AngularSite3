@@ -26,3 +26,4 @@ Denna applikation är skapad i kursen Programmering i TypeScript vid MittUnivers
 Kevin Maninnerby
 
 **Tillgänglig vid:** 
+https://angular-site3.vercel.app/schedule
