@@ -18,6 +18,7 @@ export class Schedule {
   ngOnInit() {
     // Inläsning av kurser
     this.loadCourses();
+    this.sortCourseCode();
   }
 
   // Sökfras
@@ -49,7 +50,6 @@ export class Schedule {
 
   // Sortera kurskod i bokstavsordning
 sortCourseCode() {
-
   if (this.arrow() === "codeDesc") {
     this.filteredCourses().sort((a, b) => b.code.localeCompare(a.code));
     console.log("Ö-A");
